@@ -15,7 +15,6 @@ public class RemoteServerVerticle extends AbstractVerticle {
     public void start() {
         this.controller = new Controller(vertx);
         this.router = Router.router(vertx);
-//        router.route().handler(BodyHandler.create());
         router.get("/remote_server_test").handler(controller::handleRequest);
 
         // start http server
